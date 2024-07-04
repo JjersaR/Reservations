@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  reservation-api:
+    image: reservations-api
+    container_name: reservations-api-container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    restart: always
+    networks:
+      - reservation-network
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql
+    container_name: ReservationsDB
+    environment:
+      MYSQL_ROOT_PASSWORD: 271631126
+      MYSQL_DATABASE: Reservation
+      MYSQL_USER: jersa
+      MYSQL_PASSWORD: jersaBP56
+    ports:
+      - "3307:3306"
+    networks:
+      - reservation-network
+    volumes:
+      - reservation-volume:/var/lib/mysql
+    
+networks:
+  reservation-network:
+
+volumes:
+  reservation-volume: 

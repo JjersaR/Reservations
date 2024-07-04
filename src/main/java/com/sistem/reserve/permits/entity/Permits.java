@@ -3,6 +3,7 @@ package com.sistem.reserve.permits.entity;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "Permits")
 public class Permits {
   // PK
   @Id
