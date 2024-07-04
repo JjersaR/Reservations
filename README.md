@@ -7,12 +7,15 @@ This is a reservation system that contains the following roles:
 -  RECEPTION
 
 The **ADMIN** can list all the users that exist in the database.
+
 The **CLIENT** can view his reservations, the services he has booked, update his data and delete his user name.
+
 The **PROVIDER** can make the CRUD on the service table so that it can manage the services it provides.
+
 The **RECEPTION** can see the users by their id or name, can see the users that were added between certain dates, can do CRUD on the users and can manage all the reservations.
 
 
- The Reservations service interface has this:
+The Reservations service interface has this:
 ```java
 public interface IReservationService {
 
@@ -35,7 +38,7 @@ public interface IReservationService {
   void deleteById(Long id);
 }
 ```
- The Services service interface has this:
+The Services service interface has this:
  ```java
  public interface IServicesService {
 
@@ -96,4 +99,14 @@ public interface IUserService {
   // delete
   void deleteById(Long id);
 }
+```
+
+To run this project you have to have docker and docker-compose, be in the root of the project and run this command:
+```docker
+docker-compose up --build -d
+```
+
+If it is done in linux the command would be:
+```docker
+sudo docker-compose up --build -d
 ```
