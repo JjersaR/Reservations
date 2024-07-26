@@ -21,7 +21,7 @@ RUN ./mvnw dependency:go-offline
 COPY ./src /root/src
 
 # BUILD APPLICATION
-RUN ./mvnw clean install -DskipTests
+RUN ./mvnw clean install
 
 # lift application
 ENTRYPOINT [ "java", "-jar", "/root/target/Reservations-0.0.1-SNAPSHOT.jar" ]

@@ -5,6 +5,9 @@ import com.sistem.reserve.reservations.entity.Reservations;
 import com.sistem.reserve.roles.entity.Roles;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -12,6 +15,9 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "Users")
 public class Users {
 
