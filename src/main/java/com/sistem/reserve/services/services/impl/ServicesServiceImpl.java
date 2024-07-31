@@ -30,6 +30,8 @@ public class ServicesServiceImpl implements IServicesService {
 
   @Override
   public Optional<Services> findById(Long id) {
+    if (repository.findById(id).isEmpty())
+      throw new ObjectNoFoundException("Service not found");
     return repository.findById(id);
   }
 
